@@ -1,0 +1,65 @@
+﻿@model Capstone1.Models.RegisterForm
+
+<h1>Registration Page</h1>
+
+<form method="post" asp-action="GotoReg">
+
+    <p>
+        <label asp-for="ParentName">Parent's Name: </label>
+        <input asp-for="ParentName" />
+    </p>
+
+    <br />
+    <br />
+
+    <p>
+        <label asp-for="ChildName">Child's Name: </label>
+        <input asp-for="ChildName" />
+    </p>
+
+    <br />
+    <br />
+
+    <p>
+        <label asp-for="ChildAge">Child's Age: </label>
+        <input asp-for="ChildAge" />
+    </p>
+
+    <br />
+    <br />
+
+    <p>
+        <label asp-for="Email">Parent's Email: </label>
+        <input asp-for="Email" />
+    </p>
+
+    <br />
+    <br />
+    <p>
+        <label asp-for="Phone">Parent's phone: </label>
+        <input asp-for="Phone" />
+    </p>
+
+    <br />
+    <br />
+
+    <p>
+        <label asp-for="ContactPreference">Contact Preference: </label>
+        <select asp-for="ContactPreference">
+            <option value="phonecall">Phone Call</option>
+            <option value="phonecall">Email</option>
+            <option value="phonecall">Text</option>
+            <option value="phonecall">Social Media</option>
+            </select>
+    </p>
+
+    <br />
+    <br />
+
+    
+    
+    <button type="submit">Register</button>
+
+
+
+</form>
