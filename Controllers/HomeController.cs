@@ -23,6 +23,11 @@ namespace Capstone1.Controllers
             return View("Registration");
         }
 
+        public IActionResult ClassDetails()
+        {
+            return View("ClassDetails");
+        }
+
         [HttpPost]
 
         public IActionResult GotoReg(RegisterForm rf)
