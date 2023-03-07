@@ -2,7 +2,7 @@
 
 <h1>Registration Page</h1>
 
-<form method="post" asp-action="GotoReg">
+<form method="post" asp-action="RegSuccess">
 
     <p>
         <label asp-for="ParentName">Parent's Name: </label>
@@ -54,8 +54,8 @@
 
     
     
-    <button type="submit">Register</button>
-
-
+    <button type="submit" class="register">Register</button>
 
 </form>
+
+<a asp-action="Index"><button class="cancel">Cancel</button></a>

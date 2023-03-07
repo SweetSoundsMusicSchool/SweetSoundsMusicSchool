@@ -2,6 +2,8 @@
 {
     public class RegisterForm
     {
+        public string Location { get; set; } = string.Empty;
+
         public string ParentName { get; set; } = string.Empty;
 
         public string ChildName { get; set; } = string.Empty;

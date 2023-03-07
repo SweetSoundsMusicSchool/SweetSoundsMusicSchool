@@ -28,3 +28,29 @@ table {
 table, th, td {
     border: 1px solid;
 }
+
+.FormDiv {
+    border: 1px solid;
+    padding:5%;
+}
+
+.register{
+    background-color:forestgreen;
+
+}
+
+.cancel {
+    background-color:indianred;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+}

@@ -30,9 +30,9 @@ namespace Capstone1.Controllers
 
         [HttpPost]
 
-        public IActionResult GotoReg(RegisterForm rf)
+        public IActionResult RegSuccess(RegisterForm rf)
         {
-            return View("Registration");
+            return View("RegSuccess");
 
         }
         public IActionResult Privacy()

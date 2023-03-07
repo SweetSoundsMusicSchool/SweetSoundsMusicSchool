@@ -1,4 +1,36 @@
-﻿
+﻿@model Capstone1.Models.ClassChoosenDetails;
+
+<h1>Please Choose One Of The Given Classes</h1>
 
 
-<h1>You've successfully registered!'</h1>
+<div class="FormDiv">
+
+
+<form method="post" asp-action="ClassChoosen">
+
+
+    <p>
+        <label asp-for="CLASS">Class: </label>
+        <select asp-for="CLASS">
+
+            <option value="1">Private Piano Lessons (0 to 4 Years)</option>
+            <option value="2">PreSchool Piano Foundation  (2 to 4 Years)</option>
+            <option value="3">Early Years Music</option>
+
+        </select>
+    </p>
+
+    <p>
+        <label asp-for="Location">Location: </label>
+        <select asp-for="Location">
+            <option value="Milton">Milton</option>
+            <option value="Georgetown">Georgetown</option>
+            <option value="Oakville">Oakville</option>
+        </select>
+    </p>
+
+        <button type="submit" class="register">Register</button>
+     
+</form>
+    <a asp-action="Index"><button class="cancel">Cancel</button></a>
+</div>
