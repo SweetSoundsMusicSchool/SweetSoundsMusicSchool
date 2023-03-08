@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1IFxOadMwPpove1VnQ1UFTPH8JEwuPTYnLgrFgofwkM=",
+  "Hash": "auDzQSCTP1D0OhT/HAcDQuA0n3rHKUnxAMcpsGg2mkU=",
   "Source": "Capstone1",
   "BasePath": "_content/Capstone1",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Aleks\\source\\repos\\SweetSoundsMusicSchool\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Capstone1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aleks\\source\\repos\\SweetSoundsMusicSchool\\wwwroot\\css\\forms.css",
+      "SourceId": "Capstone1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aleks\\source\\repos\\SweetSoundsMusicSchool\\wwwroot\\",
+      "BasePath": "_content/Capstone1",
+      "RelativePath": "css/forms.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\forms.css"
     },
     {
       "Identity": "C:\\Users\\Aleks\\source\\repos\\SweetSoundsMusicSchool\\wwwroot\\css\\grids.css",

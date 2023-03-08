@@ -5,11 +5,12 @@
 
 <div class="FormDiv">
 
+    <p>Please pick the age group and the location you wish to attend</p>
 
 <form method="post" asp-action="ClassChoosen">
 
 
-    <p>
+    <span>
         <label asp-for="CLASS">Class: </label>
         <select asp-for="CLASS">
 
@@ -18,19 +19,23 @@
             <option value="3">Early Years Music</option>
 
         </select>
-    </p>
+    </span>
 
-    <p>
+    <span>
         <label asp-for="Location">Location: </label>
         <select asp-for="Location">
             <option value="Milton">Milton</option>
             <option value="Georgetown">Georgetown</option>
             <option value="Oakville">Oakville</option>
         </select>
-    </p>
+    </span>
 
-        <button type="submit" class="register">Register</button>
+        <nav class="buttons">
+
+            <a asp-action="Index" class="Cancel">Cancel</a>
+            <button type="submit" class="submit">Register</button>
+
+        </nav>
      
 </form>
-    <a asp-action="Index"><button class="cancel">Cancel</button></a>
 </div>

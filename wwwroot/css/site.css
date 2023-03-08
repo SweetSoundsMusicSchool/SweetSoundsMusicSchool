@@ -29,18 +29,11 @@ table, th, td {
     border: 1px solid;
 }
 
-.FormDiv {
-    border: 1px solid;
-    padding:5%;
-}
+
 
 .register{
     background-color:forestgreen;
 
-}
-
-.cancel {
-    background-color:indianred;
 }
 
 

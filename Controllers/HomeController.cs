@@ -18,6 +18,7 @@ namespace Capstone1.Controllers
             return View();
         }
 
+       
         public IActionResult GotoReg()
         {
             return View("Registration");

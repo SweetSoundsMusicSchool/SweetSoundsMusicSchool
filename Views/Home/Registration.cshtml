@@ -2,44 +2,44 @@
 
 <h1>Registration Page</h1>
 
+
+<div class="FormDiv">
+
+  <p>Please fill out the following information to register for Sweet Sounds Music School</p>
+
 <form method="post" asp-action="RegSuccess">
 
-    <p>
+    <span>
         <label asp-for="ParentName">Parent's Name: </label>
-        <input asp-for="ParentName" />
-    </p>
+        <input asp-for="ParentName" type="text"/>
+    </span>
 
-    <br />
-
-    <p>
+    <span>
         <label asp-for="ChildName">Child's Name: </label>
-        <input asp-for="ChildName" />
-    </p>
+            <input asp-for="ChildName" type="text" />
+    </span>
 
-    <br />
 
-    <p>
+
+    <span>
         <label asp-for="ChildAge">Child's Age: </label>
-        <input asp-for="ChildAge" />
-    </p>
+        <input asp-for="ChildAge" type="number" step="1.0"/>
+    </span>
 
-    <br />
 
-    <p>
+    <span>
         <label asp-for="Email">Parent's Email: </label>
-        <input asp-for="Email" />
-    </p>
+        <input asp-for="Email" type="email"/>
+    </span>
 
-    <br />
 
-    <p>
+    <span>
         <label asp-for="Phone">Parent's phone: </label>
-        <input asp-for="Phone" />
-    </p>
+        <input asp-for="Phone" type="tel"/>
+    </span>
 
-    <br />
-
-    <p>
+   
+    <span>
         <label asp-for="ContactPreference">Contact Preference: </label>
         <select asp-for="ContactPreference">
             <option value="phonecall">Phone Call</option>
@@ -47,15 +47,21 @@
             <option value="phonecall">Text</option>
             <option value="phonecall">Social Media</option>
             </select>
-    </p>
+    </span>
 
-    <br />
-    <br />
 
     
+    <nav class="buttons">
+        
+
+        <a asp-action="Index" class="Cancel">Cancel</a>
+        <button type="submit" class="submit">Register</button>
+
+    </nav>
     
-    <button type="submit" class="register">Register</button>
+    
 
 </form>
 
-<a asp-action="Index"><button class="cancel">Cancel</button></a>
+</div>
+
