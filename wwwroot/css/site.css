@@ -43,14 +43,45 @@ table, th, td {
     background-color:indianred;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+
+
+.content {
+    border-radius: 10% / 50%;
+    background-color: #7cdbfc
 }
 
-.grid-item {
-    padding: 20px;
+.link {
+    background-color: ghostwhite;
+    border-radius: 25% 10%;
+    padding: 5%;
     font-size: 18px;
-    text-align: center;
+    text-decoration: none;
+    color:black;
 }
+
+    .link:hover {
+        color:black;
+        background-color:bisque;
+    }
+
+.homeImage {
+    border-radius: 10% / 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.register {
+    background-color:cadetblue;
+    border-radius: 25% 10%;
+    padding: 40%;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    margin:auto;
+    align-content:center;
+}
+
+    .register:hover {
+        color: black;
+        background-color: bisque;
+    }

@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    margin: 10%;
+    padding: 5%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.grid-text {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    
+}
+
+.grid-item-text {
+    border: thin 2px black;
+    margin: 1%;
+    padding: 1%;
+    font-size: 18px;
+    text-align: center;
+}
