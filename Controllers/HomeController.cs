@@ -19,8 +19,14 @@ namespace Capstone1.Controllers
         }
 
        
-        public IActionResult GotoReg()
+        public IActionResult ClassPicker()
         {
+            return View("ClassPicker");
+        }
+
+        public IActionResult Registration(String lesson, String location)
+        {
+
             return View("Registration");
         }
 
@@ -43,7 +49,7 @@ namespace Capstone1.Controllers
 
         public IActionResult RegSuccess(RegisterForm rf)
         {
-            return View("RegSuccess");
+            return View("Payment");
 
         }
         public IActionResult Privacy()

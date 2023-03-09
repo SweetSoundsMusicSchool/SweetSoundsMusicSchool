@@ -1,0 +1,31 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Sweet Sounds Music School ";
+}
+
+<div class="text-center">
+
+    <h1>Registration Page</h1>
+
+    <div>
+        Here is will payment will be, Covered In Next Sprint.
+    </div>
+
+    <form method="post" asp-action="#">
+
+        <span>
+            <label class="nameoncard">Name on Card</label>
+                <input name="nameoncard" type="text" placeholder="FirstName LastName">
+        </span>
+
+        <span>
+            <label for="ccn">Credit Card Number:</label>
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+                autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+        </span>
+
+        
+
+    </form>
+</div>
