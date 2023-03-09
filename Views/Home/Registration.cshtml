@@ -11,31 +11,37 @@
 
     <span>
         <label asp-for="ParentName">Parent's Name: </label>
-        <input asp-for="ParentName" type="text" required/>
+            <input asp-for="ParentName" type="text" pattern="^[^0-9]+$" required />
     </span>
 
     <span>
         <label asp-for="ChildName">Child's Name: </label>
-            <input asp-for="ChildName" type="text" required />
+            <input asp-for="ChildName" type="text" pattern="^[^0-9]+$" required />
     </span>
 
 
 
     <span>
         <label asp-for="ChildAge">Child's Age: </label>
-            <input asp-for="ChildAge" type="number" step="1.0" required />
+            <input asp-for="ChildAge" type="number" step="1.0" min="0" max="5" required />
+    </span>
+
+    <span>
+         <label asp-for="NumberOfChildren">Number Of Childern: </label>
+            <input asp-for="NumberOfChildren" type="number" step="1.0" min="1"  placeholder="1" required />
     </span>
 
 
     <span>
         <label asp-for="Email">Parent's Email: </label>
-            <input asp-for="Email" type="email" required />
+            <input asp-for="Email" type="email" placeholder="address@domain.ca" required />
     </span>
 
 
     <span>
         <label asp-for="Phone">Parent's phone: </label>
-            <input asp-for="Phone" type="tel" required />
+            <input asp-for="Phone" type="tel" placeholder="1234567890"
+                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onBlur='addDashes(this)' required />
     </span>
 
    

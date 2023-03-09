@@ -14,6 +14,8 @@
 
         public string ChildAge { get; set; } = string.Empty;
 
+        public string NumberOfChildren { get; set; } = string.Empty;
+
         public string ContactPreference { get; set; } = string.Empty;
 
         public bool? NewCustomer { get; set; } 
