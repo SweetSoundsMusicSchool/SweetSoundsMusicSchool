@@ -11,31 +11,31 @@
 
     <span>
         <label asp-for="ParentName">Parent's Name: </label>
-        <input asp-for="ParentName" type="text"/>
+        <input asp-for="ParentName" type="text" required/>
     </span>
 
     <span>
         <label asp-for="ChildName">Child's Name: </label>
-            <input asp-for="ChildName" type="text" />
+            <input asp-for="ChildName" type="text" required />
     </span>
 
 
 
     <span>
         <label asp-for="ChildAge">Child's Age: </label>
-        <input asp-for="ChildAge" type="number" step="1.0"/>
+            <input asp-for="ChildAge" type="number" step="1.0" required />
     </span>
 
 
     <span>
         <label asp-for="Email">Parent's Email: </label>
-        <input asp-for="Email" type="email"/>
+            <input asp-for="Email" type="email" required />
     </span>
 
 
     <span>
         <label asp-for="Phone">Parent's phone: </label>
-        <input asp-for="Phone" type="tel"/>
+            <input asp-for="Phone" type="tel" required />
     </span>
 
    
