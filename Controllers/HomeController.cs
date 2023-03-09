@@ -28,6 +28,16 @@ namespace Capstone1.Controllers
         {
             return View("ClassDetails");
         }
+        
+
+        public IActionResult PriceInfo()
+        {
+            return View("PriceInfo");
+        }
+        public IActionResult about()
+        {
+            return View("about");
+        }
 
         [HttpPost]
 
