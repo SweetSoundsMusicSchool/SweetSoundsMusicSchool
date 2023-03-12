@@ -6,6 +6,8 @@
 
         public string ParentName { get; set; } = string.Empty;
 
+        public string ParentAttendence { get; set; } = string.Empty;
+
         public string ChildName { get; set; } = string.Empty;
 
         public string Email { get; set; } = string.Empty;

@@ -4,6 +4,6 @@
     {
         public string Location { get; set; } = string.Empty;
 
-        public string CLASS { get; set; } = string.Empty;
+        public string lesson { get; set; } = string.Empty;
     }
 }
