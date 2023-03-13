@@ -18,28 +18,42 @@ namespace Capstone1.Controllers
             return View();
         }
 
-       
-        public IActionResult ClassPicker()
+        /*
+         * Navigation to the ClassPicker Page, Two drop downs to select class details.
+         */
+        public IActionResult ClassPicker(ClassChoosenDetails classDetails)
         {
             return View("ClassPicker");
         }
 
-        public IActionResult Registration(String lesson, String location)
+        /*
+         * Navigation to the registration page with form.
+         */
+        public IActionResult Registration()
         {
-
             return View("Registration");
+
         }
 
+        /*
+         * Navigation to Class Detail, contains content
+         */
         public IActionResult ClassDetails()
         {
             return View("ClassDetails");
         }
-        
 
+        /*
+         * Navigation to price Info, contains content
+         */
         public IActionResult PriceInfo()
         {
             return View("PriceInfo");
         }
+
+        /*
+         * Navigation to About Page, contains content
+         */
         public IActionResult about()
         {
             return View("about");
@@ -47,9 +61,22 @@ namespace Capstone1.Controllers
 
         [HttpPost]
 
-        public IActionResult RegSuccess(RegisterForm rf)
+
+        /*
+         * Navigation to Payment Page, handles Payment Information 
+         */
+        public IActionResult RegSuccess(RegisterForm formInfo)
         {
-            return View("Payment");
+            if (formInfo == null)
+            {
+                return View("Registration");
+            }
+            else
+            {
+                return View("Payment");
+            }
+
+            
 
         }
         public IActionResult Privacy()
