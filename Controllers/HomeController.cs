@@ -74,13 +74,20 @@ namespace Capstone1.Controllers
             else
             {
                 return View("Payment");
-            }
-
-            
+            } 
 
         }
+        [HttpPost]
+        public IActionResult PaymentProceed(Payment payInfo)
+        {
+            Console.WriteLine(">>>>>>>>."+payInfo.FullName);
+            
+            return View("Payment");
+        }
 
-        //temporary
+
+
+        //temporary 
         public IActionResult temp(Payment payInfo)
         {
             return View("Payment");
