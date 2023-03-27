@@ -79,6 +79,13 @@ namespace Capstone1.Controllers
             
 
         }
+
+        //temporary
+        public IActionResult temp(Payment payInfo)
+        {
+            return View("Payment");
+        }
+
         public IActionResult Privacy()
         {
             return View();
