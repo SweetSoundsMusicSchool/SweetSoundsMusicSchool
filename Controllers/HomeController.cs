@@ -80,15 +80,15 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult PaymentProceed(Payment payInfo)
         {
-            Console.WriteLine(">>>>>>>>."+payInfo.FullName);
+            Console.WriteLine(">>>>>>>>"+payInfo.FullName);
             
-            return View("Payment");
+            return View("Complete");
         }
 
 
 
         //temporary 
-        public IActionResult temp(Payment payInfo)
+        public IActionResult temp()
         {
             return View("Payment");
         }
