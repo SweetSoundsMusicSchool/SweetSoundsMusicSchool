@@ -59,12 +59,14 @@ namespace Capstone1.Controllers
             return View("about");
         }
 
-        [HttpPost]
+        
 
 
         /*
          * Navigation to Payment Page, handles Payment Information 
          */
+        RegisterForm regForm = new RegisterForm();
+        [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
             if (formInfo == null)
@@ -73,7 +75,13 @@ namespace Capstone1.Controllers
             }
             else
             {
-                return View("Payment");
+                Console.WriteLine("!!!!!!!!!"+formInfo.ParentName);
+                regForm.ChildName = formInfo.ChildName;
+                regForm.ChildAge = formInfo.ChildAge;
+                regForm.Phone = formInfo.Phone;
+                regForm.NumberOfChildren = formInfo.NumberOfChildren;  
+
+                return View("Payment"); 
             } 
 
         }
@@ -81,7 +89,28 @@ namespace Capstone1.Controllers
         public IActionResult PaymentProceed(Payment payInfo)
         {
             Console.WriteLine(">>>>>>>>"+payInfo.FullName);
-            
+            Console.WriteLine(">>>>>>>>" + payInfo.CardNumber);
+
+            Payment pay = new Payment
+            {
+               FullName = payInfo.FullName,
+               CardNumber = payInfo.CardNumber,
+               ExpiryMonth = payInfo.ExpiryMonth,
+               ExpiryYear = payInfo.ExpiryYear,
+               CVVNumber = payInfo.CVVNumber,
+               BFullName = payInfo.BFullName,
+               BEmail = payInfo.BEmail,
+               BAddress = payInfo.BAddress,
+               BCity = payInfo.BCity,
+               BPostalCode = payInfo.BPostalCode,
+               ChildName = regForm.ChildName,
+               ChildAge = regForm.ChildAge,
+               Phone = regForm.Phone,
+               NumberOfChildren = regForm.NumberOfChildren,
+
+            };
+            Console.WriteLine(">>>>>>>>!!!" + pay.ChildName);
+            ViewBag.Message = pay;
             return View("Complete");
         }
 

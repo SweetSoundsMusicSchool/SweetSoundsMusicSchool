@@ -1,13 +1,19 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Capstone1.Models
+@model Capstone1.Models.Payment
 @{
+    ViewBag.Title = "Complete";
+}
+
+@{
+    var data = ViewBag.Message;
 }
 
 <div class="text-center">
 
     <h2>Thank You For Registering With Sweet Sounds Music School</h2>
     <h3>Please Review Your entered Information</h3>
+
+    <p></p>
 
     <div class="row">
         <div class="col-75">
@@ -20,22 +26,22 @@
 
                             <label for="CardNumber">Number On Card (16 digit):</label>
                             <input for="CardNumber" type="text" id="ccnum" name="cardnumber"
-                                   value="***1111-2222-3333-4444" disabled>
+                                   value="@data.CardNumber" disabled>
 
                             <label for="ExpiryMonth">Expiry Month:</label>
                             <input for="ExpiryMonth" type="text" id="expmonth"
-                                   name="expmonth" value="10" disabled>
+                                   name="expmonth" value="@data.ExpiryMonth" disabled>
 
                             <div class="row">
                                 <div class="col-50">
                                     <label for="ExpiryYear">Expiry Year:</label>
-                                    <input for="ExpiryYear" type="text" id="expyear" name="expyear" 
-                                        value="2026" disabled>
+                                    <input for="ExpiryYear" type="text" id="expyear" name="expyear"
+                                           value="@data.ExpiryYear" disabled>
                                 </div>
                                 <div class="col-50">
                                     <label afor="CVVNumber">CVV (3 digit number) :</label>
-                                    <input for="CVVNumber" type="text" id="cvv" name="cvv" 
-                                        value="000" disabled>
+                                    <input for="CVVNumber" type="text" id="cvv" name="cvv"
+                                           value="@data.CVVNumber" disabled>
                                 </div>
                             </div>
                         </div>
@@ -44,22 +50,23 @@
                             <h3>Class Registration Information</h3>
 
                             <label for="ParentName">Parent's Name: </label>
-                                <input for="ParentName" type="text" value="**insert Parents name" disabled />
+                            <input for="ParentName" type="text" value="@data.FullName" disabled />
 
                             <label for="ChildName">Child's Name: </label>
-                                <input for="ChildName" type="text" value="**insert childs name" disabled />
+                                <input for="ChildName" type="text" value="@data.ChildName" disabled />
 
                             <label for="ChildAge">Child's Age: </label>
-                             <input for="ChildAge" type="number" step="1.0" min="0" max="5" value="0" disabled />
+                            <input for="ChildAge" type="number" step="1.0" min="0" max="5" value="@data.ChildAge" disabled />
 
                             <label for="NumberOfChildren">Number Of Childern: </label>
-                                <input for="NumberOfChildren" type="number" step="1.0" min="1" max="3" value="1" disabled />
+                            <input for="NumberOfChildren" type="number" step="1.0" min="1" max="3" 
+                            value="@data.NumberOfChildren" disabled />
 
                             <label for="Email">Parent's Email: </label>
-                                <input for="Email" type="email" placeholder="**address@domain.ca" disabled />
+                            <input for="Email" type="email" placeholder="@data.BEmail" disabled />
 
                             <label for="Phone">Parent's phone: </label>
-                                <input for="Phone" type="tel" placeholder="** 123-456-7890" disabled />
+                            <input for="Phone" type="tel" placeholder="@data.Phone" disabled />
 
                         </div>
 
