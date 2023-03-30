@@ -62,7 +62,6 @@ namespace Capstone1.Controllers
             return View("about");
         }
 
-        
 
 
         /*
@@ -78,13 +77,11 @@ namespace Capstone1.Controllers
             }
             else
             {
-                Console.WriteLine("!!!!!!!!! formInfo.ParentName:"+formInfo.ParentName);
                 allInfo.ChildName = formInfo.ChildName;
                 allInfo.ChildAge = formInfo.ChildAge;
                 allInfo.Phone = formInfo.Phone;
                 allInfo.NumberOfChildren = formInfo.NumberOfChildren;
                 
-                Console.WriteLine("!!!!!!!!! allInfo.ParentName:" + allInfo.ParentName);
 
                 return View("Payment"); 
             } 
@@ -93,8 +90,6 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult PaymentProceed(Payment payInfo)
         {
-            Console.WriteLine(">>>>>>>>"+payInfo.FullName);
-            Console.WriteLine(">>>>>>>>" + payInfo.CardNumber);
 
 
             allInfo.FullName = payInfo.FullName;

@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-75">
             <div class="container">
-                <form>
+                <form method="post">
 
                     <div class="row">
                         <div class="col-50">
@@ -43,8 +43,18 @@
                                     <input for="CVVNumber" type="text" id="cvv" name="cvv"
                                            value="@data.CVVNumber" disabled>
                                 </div>
+                                <div class="col-50">
+                                    <h3>Class Informtion</h3>
+
+                                    <label for="ClassLocation">Class Location: </label>
+                                    <input for="ClassLocation" type="text" value="** Milton" disabled />
+
+                                    <label for="ClassType"> Type Of Class: </label>
+                                    <input for="ClassType" type="text" value="** private Paino Lesson" disabled />
+                                </div>
                             </div>
                         </div>
+                       
 
                         <div class="col-50">
                             <h3>Class Registration Information</h3>
