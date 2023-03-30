@@ -1,5 +1,5 @@
 ﻿@using Capstone1.Models
-@model Capstone1.Models.Payment
+@model Capstone1.Models.AllInformation;
 @{
     ViewBag.Title = "Complete";
 }
@@ -29,8 +29,8 @@
                                    value="@data.CardNumber" disabled>
 
                             <label for="ExpiryMonth">Expiry Month:</label>
-                            <input for="ExpiryMonth" type="text" id="expmonth"
-                                   name="expmonth" value="@data.ExpiryMonth" disabled>
+                            <input for="ExpiryMonth" type="text" id="ExpiryMonth"
+                                   name="ExpiryMonth" value="@data.ExpiryMonth" disabled>
 
                             <div class="row">
                                 <div class="col-50">
@@ -53,20 +53,21 @@
                             <input for="ParentName" type="text" value="@data.FullName" disabled />
 
                             <label for="ChildName">Child's Name: </label>
-                                <input for="ChildName" type="text" value="@data.ChildName" disabled />
+                            <input for="ChildName" type="text" value="@data.ChildName" disabled />
 
                             <label for="ChildAge">Child's Age: </label>
-                            <input for="ChildAge" type="number" step="1.0" min="0" max="5" value="@data.ChildAge" disabled />
+                            <input for="ChildAge" type="number" step="1.0" min="0" max="5" 
+                                value="@data.ChildAge" disabled />
 
                             <label for="NumberOfChildren">Number Of Childern: </label>
                             <input for="NumberOfChildren" type="number" step="1.0" min="1" max="3" 
-                            value="@data.NumberOfChildren" disabled />
+                                value="@data.NumberOfChildren" disabled />
 
                             <label for="Email">Parent's Email: </label>
-                            <input for="Email" type="email" placeholder="@data.BEmail" disabled />
+                            <input for="Email" type="email" value="@data.BEmail" disabled />
 
                             <label for="Phone">Parent's phone: </label>
-                            <input for="Phone" type="tel" placeholder="@data.Phone" disabled />
+                            <input for="Phone" type="tel" value="@data.Phone" disabled />
 
                         </div>
 

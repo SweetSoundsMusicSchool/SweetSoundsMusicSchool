@@ -6,74 +6,75 @@
 
 <div class="FormDiv">
 
-  <p>Please fill out the following information to register for Sweet Sounds Music School</p>
-
-<form method="post" asp-action="RegSuccess">
-
-    <span>
-        <label asp-for="ParentName">Parent's Name: </label>
-            <input asp-for="ParentName" type="text" pattern="^[^0-9]+$" required />
-    </span>
-
-        <span>
-            <label asp-for="ParentAttendence">Number of Parents That Wish To Attend: </label>
-            <input asp-for="ParentAttendence" type="number" step="1.0" min="0" max="2" required />
-        </span>
-
-    <span>
-        <label asp-for="ChildName">Child's Name: </label>
-            <input asp-for="ChildName" type="text" pattern="^[^0-9]+$" required />
-    </span>
+	<p>Please fill out the following information to register for Sweet Sounds Music School</p>
 
 
+	<form method="post" asp-action="RegSuccess">
 
-    <span>
-        <label asp-for="ChildAge">Child's Age: </label>
-            <input asp-for="ChildAge" type="number" step="1.0" min="0" max="5" required />
-    </span>
-
-    <span>
-         <label asp-for="NumberOfChildren">Number Of Childern: </label>
-            <input asp-for="NumberOfChildren" type="number" step="1.0" min="1" max="3" placeholder="1" required />
-    </span>
+		<span>
+			<label asp-for="ParentName">Parent's Name: </label>
+			<input asp-for="ParentName" type="text" pattern="^[^0-9]+$" required />
+		</span>
 
 
-    <span>
-        <label asp-for="Email">Parent's Email: </label>
-            <input asp-for="Email" type="email" placeholder="address@domain.ca" required />
-    </span>
+		<span>
+			<label asp-for="ParentAttendence">Number of Parents That Wish To Attend: </label>
+			<input asp-for="ParentAttendence" type="number" step="1.0" min="0" max="2" required />
+		</span>
+
+		<span>
+			<label asp-for="ChildName">Child's Name: </label>
+			<input asp-for="ChildName" type="text" pattern="^[^0-9]+$" required />
+		</span>
 
 
-    <span>
-        <label asp-for="Phone">Parent's phone: </label>
-            <input asp-for="Phone" type="tel" placeholder="1234567890"
-                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onBlur='addDashes(this)' required />
-    </span>
 
-   
-    <span>
-        <label asp-for="ContactPreference">Contact Preference: </label>
-        <select asp-for="ContactPreference">
-            <option value="phonecall">Phone Call</option>
-            <option value="phonecall">Email</option>
-            <option value="phonecall">Text</option>
-            <option value="phonecall">Social Media</option>
-            </select>
-    </span>
+		<span>
+			<label asp-for="ChildAge">Child's Age: </label>
+			<input asp-for="ChildAge" type="number" step="1.0" min="0" max="5" required />
+		</span>
+
+		<span>
+			<label asp-for="NumberOfChildren">Number Of Childern: </label>
+			<input asp-for="NumberOfChildren" type="number" step="1.0" min="1" max="3" placeholder="1" required />
+		</span>
 
 
-    
-    <nav class="buttons">
-        
+		<span>
+			<label asp-for="Email">Parent's Email: </label>
+			<input asp-for="Email" type="email" placeholder="address@domain.ca" required />
+		</span>
 
-        <a asp-action="Index" class="Cancel">Cancel</a>
-        <button type="submit" class="submit">Register</button>
 
-    </nav>
-    
-    
+		<span>
+			<label asp-for="Phone">Parent's phone: </label>
+			<input asp-for="Phone" type="tel" placeholder="1234567890"
+				   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onBlur='addDashes(this)' required />
+		</span>
 
-</form>
+
+		<span>
+			<label asp-for="ContactPreference">Contact Preference: </label>
+			<select asp-for="ContactPreference">
+				<option value="phonecall">Phone Call</option>
+				<option value="phonecall">Email</option>
+				<option value="phonecall">Text</option>
+			</select>
+		</span>
+
+
+
+		<nav class="buttons">
+
+
+			<a asp-action="Index" class="Cancel">Cancel</a>
+			<button type="submit" class="submit">Register</button>
+
+		</nav>
+
+
+
+	</form>
 
 </div>
 

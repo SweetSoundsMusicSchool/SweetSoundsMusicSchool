@@ -1,12 +1,15 @@
 ﻿using Capstone1.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Dynamic;
 
 namespace Capstone1.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        AllInformation allInfo = new AllInformation();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -65,7 +68,7 @@ namespace Capstone1.Controllers
         /*
          * Navigation to Payment Page, handles Payment Information 
          */
-        RegisterForm regForm = new RegisterForm();
+       
         [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
@@ -75,11 +78,13 @@ namespace Capstone1.Controllers
             }
             else
             {
-                Console.WriteLine("!!!!!!!!!"+formInfo.ParentName);
-                regForm.ChildName = formInfo.ChildName;
-                regForm.ChildAge = formInfo.ChildAge;
-                regForm.Phone = formInfo.Phone;
-                regForm.NumberOfChildren = formInfo.NumberOfChildren;  
+                Console.WriteLine("!!!!!!!!! formInfo.ParentName:"+formInfo.ParentName);
+                allInfo.ChildName = formInfo.ChildName;
+                allInfo.ChildAge = formInfo.ChildAge;
+                allInfo.Phone = formInfo.Phone;
+                allInfo.NumberOfChildren = formInfo.NumberOfChildren;
+                
+                Console.WriteLine("!!!!!!!!! allInfo.ParentName:" + allInfo.ParentName);
 
                 return View("Payment"); 
             } 
@@ -91,26 +96,22 @@ namespace Capstone1.Controllers
             Console.WriteLine(">>>>>>>>"+payInfo.FullName);
             Console.WriteLine(">>>>>>>>" + payInfo.CardNumber);
 
-            Payment pay = new Payment
-            {
-               FullName = payInfo.FullName,
-               CardNumber = payInfo.CardNumber,
-               ExpiryMonth = payInfo.ExpiryMonth,
-               ExpiryYear = payInfo.ExpiryYear,
-               CVVNumber = payInfo.CVVNumber,
-               BFullName = payInfo.BFullName,
-               BEmail = payInfo.BEmail,
-               BAddress = payInfo.BAddress,
-               BCity = payInfo.BCity,
-               BPostalCode = payInfo.BPostalCode,
-               ChildName = regForm.ChildName,
-               ChildAge = regForm.ChildAge,
-               Phone = regForm.Phone,
-               NumberOfChildren = regForm.NumberOfChildren,
 
-            };
-            Console.WriteLine(">>>>>>>>!!!" + pay.ChildName);
-            ViewBag.Message = pay;
+            allInfo.FullName = payInfo.FullName;
+            allInfo.CardNumber = payInfo.CardNumber;
+            allInfo.ExpiryMonth = payInfo.ExpiryMonth;
+            allInfo.ExpiryYear = payInfo.ExpiryYear;
+            allInfo.CVVNumber = payInfo.CVVNumber;
+            allInfo.BFullName = payInfo.BFullName;
+            allInfo.BEmail = payInfo.BEmail;
+            allInfo.BAddress = payInfo.BAddress;
+            allInfo.BCity = payInfo.BCity;
+            allInfo.BPostalCode = payInfo.BPostalCode;
+
+
+            Console.WriteLine("LOOK HERE: " + allInfo.ChildName);
+
+            ViewBag.Message = allInfo;
             return View("Complete");
         }
 
