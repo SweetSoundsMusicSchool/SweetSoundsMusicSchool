@@ -17,25 +17,27 @@
 
 
                             <label asp-for="FullName" >Name on Card: (First & Last)</label>
-                                <input asp-for="FullName" type="text" placeholder="FirstName LastName" required>
+                                <input asp-for="FullName" type="text" placeholder="FirstName LastName"
+                                   pattern="[A-Za-z ]+" required>
 
                             <label asp-for="CardNumber">Number On Card (16 digit):</label>
-                                <input asp-for="CardNumber" type="text" id="ccnum" name="cardnumber" 
-                                    placeholder="1111-2222-3333-4444" required>
+                                <input asp-for="CardNumber" type="text" id="ccnum" name="cardnumber"
+                                   placeholder="1111-2222-3333-4444" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
 
                             <label asp-for="ExpiryMonth">Expiry Month:</label>
-                                <input asp-for="ExpiryMonth" type="text" id="expmonth" 
-                                    name="expmonth" placeholder="10" required>
+                                <input asp-for="ExpiryMonth" type="text" id="expmonth"
+                                   name="expmonth" placeholder="10" pattern="\d{1}|\d{2}" required>
 
                             <div class="row">
                                 <div class="col-50">
                                     <label asp-for="ExpiryYear">Expiry Year:</label>
-                                    <input asp-for="ExpiryYear"  type="text" id="expyear" name="expyear" 
-                                        placeholder="2026" required>
+                                    <input asp-for="ExpiryYear"  type="text" id="expyear" name="expyear"
+                                           placeholder="2026" pattern="\d{4}" required>
                                 </div> 
                                 <div class="col-50">
                                     <label asp-for="CVVNumber">CVV (3 digit number) :</label>
-                                        <input asp-for="CVVNumber" type="text" id="cvv" name="cvv" placeholder="000" required>
+                                        <input asp-for="CVVNumber" type="text" id="cvv" name="cvv"
+                                           placeholder="000" pattern="\d{3}" required>
                                 </div>
                             </div>
                         </div>
@@ -44,8 +46,8 @@
                             <h3>Billing Address/Information</h3>
 
                             <label asp-for="BFullName">Fist & Last Name:</label>
-                                <input asp-for="BFullName" type="text" id="fname" name="fname" 
-                                    placeholder="FirstName LastName">
+                                <input asp-for="BFullName" type="text" id="fname" name="fname"
+                                   placeholder="FirstName LastName" pattern="[A-Za-z ]+">
 
                             <label asp-for="BEmail">Email Address:</label>
                                 <input asp-for="BEmail" type="text" id="email" name="email" 
