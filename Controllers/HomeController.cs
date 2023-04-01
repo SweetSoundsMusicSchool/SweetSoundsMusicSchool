@@ -90,8 +90,6 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult PaymentProceed(Payment payInfo)
         {
-
-
             allInfo.FullName = payInfo.FullName;
             allInfo.CardNumber = payInfo.CardNumber;
             allInfo.ExpiryMonth = payInfo.ExpiryMonth;
