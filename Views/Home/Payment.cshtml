@@ -26,18 +26,18 @@
                                    placeholder="1111-2222-3333-4444" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
 
                             <label asp-for="ExpiryMonth">Expiry Month:</label>
-                                <input asp-for="ExpiryMonth" type="text" id="expmonth"
+                                <input asp-for="ExpiryMonth" type="Text" id="expmonth"
                                    name="expmonth" placeholder="10" pattern="\d{1}|\d{2}" required>
 
 
                             <div class="row">
                                 <div class="col-50">
                                     <label asp-for="ExpiryYear">Expiry Year:</label>
-                                    <input asp-for="ExpiryYear"  type="text" id="expyear" name="expyear"
-                                           placeholder="2026" pattern="\d{4}" required>
+                                    <input asp-for="ExpiryYear"  type="number" id="expyear" name="expyear"
+                                           placeholder="2026" pattern="\d{4}"  min="2023" minrequired>
                                 </div> 
                                 <div class="col-50">
-                                    <label asp-for="CVCNumber">CVV (3 digit number) :</label>
+                                    <label asp-for="CVCNumber">CVC (3 digit number) :</label>
                                         <input asp-for="CVCNumber" type="text" id="cvv" name="cvv"
                                            placeholder="000" pattern="\d{3}" required>
                                 </div>
