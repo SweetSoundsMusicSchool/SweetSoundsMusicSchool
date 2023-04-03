@@ -1,5 +1,6 @@
 ﻿using Capstone1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Stripe;
 using System.Diagnostics;
 using System.Dynamic;
 
@@ -8,6 +9,9 @@ namespace Capstone1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        
+
 
         AllInformation allInfo = new AllInformation();
 
@@ -62,12 +66,14 @@ namespace Capstone1.Controllers
             return View("about");
         }
 
+  
+
 
 
         /*
          * Navigation to Payment Page, handles Payment Information 
          */
-       
+
         [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
@@ -76,25 +82,36 @@ namespace Capstone1.Controllers
                 return View("Registration");
             }
             else
-            {
+            { 
+
                 allInfo.ChildName = formInfo.ChildName;
                 allInfo.ChildAge = formInfo.ChildAge;
                 allInfo.Phone = formInfo.Phone;
                 allInfo.NumberOfChildren = formInfo.NumberOfChildren;
-                
+                Console.WriteLine("!>" + formInfo.ParentName);
+                Console.WriteLine("!!>" + allInfo.ChildName);
+
 
                 return View("Payment"); 
             } 
 
         }
-        [HttpPost]
-        public IActionResult PaymentProceed(Payment payInfo)
+
+        public AllInformation GetAllInfo()
         {
+            return allInfo;
+        }
+
+        [HttpPost]
+        public IActionResult PaymentProceed(Payment payInfo, AllInformation allInfo)
+        {
+
+ 
             allInfo.FullName = payInfo.FullName;
             allInfo.CardNumber = payInfo.CardNumber;
             allInfo.ExpiryMonth = payInfo.ExpiryMonth;
             allInfo.ExpiryYear = payInfo.ExpiryYear;
-            allInfo.CVVNumber = payInfo.CVVNumber;
+            allInfo.CVVNumber = payInfo.CVCNumber;
             allInfo.BFullName = payInfo.BFullName;
             allInfo.BEmail = payInfo.BEmail;
             allInfo.BAddress = payInfo.BAddress;
@@ -102,7 +119,7 @@ namespace Capstone1.Controllers
             allInfo.BPostalCode = payInfo.BPostalCode;
 
 
-            Console.WriteLine("LOOK HERE: " + allInfo.ChildName);
+            Console.WriteLine("!!!>" + allInfo.ChildName);
 
             ViewBag.Message = allInfo;
             return View("Complete");
@@ -115,6 +132,12 @@ namespace Capstone1.Controllers
         {
             return View("Payment");
         }
+
+        public IActionResult stripe()
+        {
+            return View("StripePayment");
+        }
+
 
         public IActionResult Privacy()
         {

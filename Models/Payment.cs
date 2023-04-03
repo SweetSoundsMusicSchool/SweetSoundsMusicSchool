@@ -10,7 +10,7 @@
 
         public int ExpiryYear { get; set; }
 
-        public int CVVNumber { get; set; }
+        public int CVCNumber { get; set; }
 
         public string BFullName { get; set; } = string.Empty;
 

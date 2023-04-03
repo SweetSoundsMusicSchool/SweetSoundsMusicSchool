@@ -9,3 +9,10 @@ function addDashes(f) {
     f_val = f.value.replace(/\D[^\.]/g, "");
     f.value = f_val.slice(0, 3) + "-" + f_val.slice(3, 6) + "-" + f_val.slice(6);
 }
+
+
+//for checkout
+function checkout(pubKey, sessionId) {
+    const stripe = Stripe(pubKey);
+    stripe.redirectToCheckout({ sessionId });
+}

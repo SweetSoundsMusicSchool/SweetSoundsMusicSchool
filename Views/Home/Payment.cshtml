@@ -1,4 +1,5 @@
-﻿@model Capstone1.Models.Payment
+﻿
+@model Capstone1.Models.Payment
 
 
 
@@ -28,6 +29,7 @@
                                 <input asp-for="ExpiryMonth" type="text" id="expmonth"
                                    name="expmonth" placeholder="10" pattern="\d{1}|\d{2}" required>
 
+
                             <div class="row">
                                 <div class="col-50">
                                     <label asp-for="ExpiryYear">Expiry Year:</label>
@@ -35,8 +37,8 @@
                                            placeholder="2026" pattern="\d{4}" required>
                                 </div> 
                                 <div class="col-50">
-                                    <label asp-for="CVVNumber">CVV (3 digit number) :</label>
-                                        <input asp-for="CVVNumber" type="text" id="cvv" name="cvv"
+                                    <label asp-for="CVCNumber">CVV (3 digit number) :</label>
+                                        <input asp-for="CVCNumber" type="text" id="cvv" name="cvv"
                                            placeholder="000" pattern="\d{3}" required>
                                 </div>
                             </div>
@@ -45,7 +47,11 @@
                         <div class="col-50">
                             <h3>Billing Address/Information</h3>
 
-                            <label asp-for="BFullName">Fist & Last Name:</label>
+                            <label for="SameAs"> Same as Billing Address: </label>
+                            <input for="SameAs" name="SameAs" type="checkbox" value="Same as Billing address"
+                                    id="SameAs"/> <br />
+
+                            <label asp-for="BFullName">First & Last Name:</label>
                                 <input asp-for="BFullName" type="text" id="fname" name="fname"
                                    placeholder="FirstName LastName" pattern="[A-Za-z ]+">
 
@@ -58,13 +64,23 @@
                                     placeholder="1234 Berksview street">
 
                             <label asp-for="BCity">City:</label>
-                                <input asp-for="BCity" type="text" id="city" name="city" placeholder="Mississauga">
+                                <input asp-for="BCity" type="text" id="city" name="city"
+                                   placeholder="Mississauga" pattern="[A-Za-z ]+>
 
                             <label asp-for="BPostalCode">Postal/Zip Code:</label>
                                 <input asp-for="BPostalCode" type="text" id="zip" name="zip" 
-                                    placeholder="10001">
+                                    placeholder="100001">
                         </div>
 
+                        <div class="row">
+                            <div class="col-50" >
+                            
+                                <label for="total">Sub Total:</label>
+                                <input for="total" type="text" id="total" name="total"
+                                       value="**$100.00" disabled/>
+                            </div>
+                    
+                        </div>
                     </div>
                     <br />
                     <nav class="buttons">
