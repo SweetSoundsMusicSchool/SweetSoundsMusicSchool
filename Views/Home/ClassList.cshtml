@@ -1,0 +1,31 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Sweet Sounds Music School ";
+}
+<div class="text-center">
+
+    <h1 class="display-4">Sweet Sound Music Class List</h1>
+
+
+    <div class="">
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>Parants/Gaurdians Name</th>
+                <th>Child Name</th>
+                <th>Number Of Children</th>
+                <th>Contact Information</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+    <asp:Button ID="printButton" runat="server" Text="Print" OnClientClick="javascript:window.print();" />print
+
+
+</div>

@@ -138,6 +138,12 @@ namespace Capstone1.Controllers
             return View("StripePayment");
         }
 
+        //Admin view for Jenny's class list
+        public IActionResult ClassList()
+        {
+            return View("ClassList");
+        }
+
 
         public IActionResult Privacy()
         {
