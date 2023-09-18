@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using Shared.Models;
 
 namespace Capstone1.Data

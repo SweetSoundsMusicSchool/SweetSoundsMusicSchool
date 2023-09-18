@@ -1,31 +1,43 @@
-﻿@model string
+﻿@model List<AllInformation>
+
 
 @{
     ViewData["Title"] = "Sweet Sounds Music School ";
+
 }
 <div class="text-center">
 
     <h1 class="display-4">Sweet Sound Music Class List</h1>
 
 
+
     <div class="">
+        <h2>Registered Clients Information</h2>
         <table>
             <tr>
-                <th>Class</th>
-                <th>Parants/Gaurdians Name</th>
+                <th>Parents/Gaurdians Name</th>
                 <th>Child Name</th>
                 <th>Number Of Children</th>
-                <th>Contact Information</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ParentName</td>
+                    <td>@item.ChildName</td>
+                    <td>@item.NumberOfChildren</td>
+                    <td>@item.ChildAge</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+
+                </tr>
+            }
 
         </table>
+       
     </div>
-    <asp:Button ID="printButton" runat="server" Text="Print" OnClientClick="javascript:window.print();" />print
+
 
 
 </div>

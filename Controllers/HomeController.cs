@@ -2,21 +2,27 @@
 using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using System.Diagnostics;
-using System.Dynamic;
+using System.Data.SqlClient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Drawing;
+using System;
+using System.Data;
+using Google.Protobuf.WellKnownTypes;
 
 namespace Capstone1.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         
-
+ 
+        private readonly AllInformation _context;
 
         AllInformation allInfo = new AllInformation();
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AllInformation context , ILogger<HomeController> logger)
         {
+            _context = context;
             _logger = logger;
         }
 
@@ -84,13 +90,23 @@ namespace Capstone1.Controllers
             else
             { 
 
-                allInfo.ChildName = formInfo.ChildName;
-                allInfo.ChildAge = formInfo.ChildAge;
-                allInfo.Phone = formInfo.Phone;
-                allInfo.NumberOfChildren = formInfo.NumberOfChildren;
+            
                 Console.WriteLine("!>" + formInfo.ParentName);
-                Console.WriteLine("!!>" + allInfo.ChildName);
+                Console.WriteLine("!!>" + formInfo.ChildName);
 
+                AllInformation umodel = new AllInformation();
+                umodel.ParentName = formInfo.ParentName;
+                umodel.ChildName = formInfo.ChildName;
+                umodel.ChildAge = formInfo.ChildAge;
+                umodel.NumberOfChildren = formInfo.NumberOfChildren;
+                umodel.Email = formInfo.Email;
+                umodel.Phone = formInfo.Phone;
+
+                int result = umodel.SaveDetails();
+                if (result > 0)
+                {
+                    Console.WriteLine("Data Saved Successfully");
+                }
 
                 return View("Payment"); 
             } 
@@ -141,6 +157,38 @@ namespace Capstone1.Controllers
         //Admin view for Jenny's class list
         public IActionResult ClassList()
         {
+            SqlConnection conn = new SqlConnection(GetConString.ConString());
+            String connectionString = GetConString.ConString();
+            String sql = "SELECT * FROM ClientInformation";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            var model = new List<AllInformation>();
+            using (conn)
+            {
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var info = new AllInformation();
+                    info.ParentName = rdr["ParentName"].ToString();
+                    info.ChildName = rdr["ChildName"].ToString();
+
+                    Object numChild = rdr["NumOfChildren"];
+                    info.NumberOfChildren = numChild.ToString();
+
+                   info.ChildAge = rdr["ChildAge"].ToString()  ;
+
+
+                    info.Email = rdr["Email"].ToString();
+                    info.Phone = rdr["PhoneNumber"].ToString();
+                    model.Add(info);
+                }
+
+            }
+
+            return View(model);
+
+
             return View("ClassList");
         }
 

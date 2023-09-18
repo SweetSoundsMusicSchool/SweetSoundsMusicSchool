@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Stripe.Checkout;
 using Shared.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Capstone1.Controllers
 {
