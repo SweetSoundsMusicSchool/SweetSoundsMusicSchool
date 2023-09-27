@@ -1,7 +1,12 @@
-﻿namespace Capstone1.Models
+﻿using DbContext = Microsoft.EntityFrameworkCore.DbContext;
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+
+namespace Capstone1.Models
 {
     public class Payment
     {
+
         public string FullName { get; set; } = string.Empty;
 
         public string CardNumber { get; set; } = string.Empty;

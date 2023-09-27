@@ -41,6 +41,9 @@
                                         <input asp-for="CVCNumber" type="text" id="cvv" name="cvv"
                                            placeholder="000" pattern="\d{3}" required>
                                 </div>
+                                <label asp-for="BEmail">Email Address:</label>
+                                <input asp-for="BEmail" type="text" id="email" name="email"
+                                       placeholder="address@domain.ca">
                             </div>
                         </div>
 
@@ -55,9 +58,7 @@
                                 <input asp-for="BFullName" type="text" id="fname" name="fname"
                                    placeholder="FirstName LastName" pattern="[A-Za-z ]+">
 
-                            <label asp-for="BEmail">Email Address:</label>
-                                <input asp-for="BEmail" type="text" id="email" name="email" 
-                                    placeholder="address@domain.ca">
+                            
                             
                             <label asp-for="BAddress">Address:</label>
                                 <input asp-for="BAddress" type="text" id="adress" name="address" 

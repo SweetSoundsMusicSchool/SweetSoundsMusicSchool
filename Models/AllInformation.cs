@@ -42,6 +42,8 @@ namespace Capstone1.Models
         public string BCity { get; set; } = string.Empty;
         public string BPostalCode { get; set; } = string.Empty;
 
+        public string Haspaid { get; set; }
+
 
 
         public int SaveDetails()
@@ -50,11 +52,23 @@ namespace Capstone1.Models
             string query = "INSERT INTO ClientInformation(ParentName,ChildName,NumOfChildren,ChildAge,Email,PhoneNumber) " +
                 "values ('" + ParentName + "','" + ChildName + "','" + NumberOfChildren + "','" 
                  + ChildAge + "','"+Email +"','"+Phone+"')";
+
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
             return i;
+        }
+
+        public int PaidConfirmation(string email)
+        {
+            SqlConnection con = new SqlConnection(GetConString.ConString());
+            string query = "INSERT INTO ClientInformation (PaymentStatus) VALUES ('" + Haspaid + "') WHERE Email = '"+email+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+                return i;
         }
     }
 }

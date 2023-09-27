@@ -88,11 +88,8 @@ namespace Capstone1.Controllers
                 return View("Registration");
             }
             else
-            { 
+            {             
 
-            
-                Console.WriteLine("!>" + formInfo.ParentName);
-                Console.WriteLine("!!>" + formInfo.ChildName);
 
                 AllInformation umodel = new AllInformation();
                 umodel.ParentName = formInfo.ParentName;
@@ -119,26 +116,33 @@ namespace Capstone1.Controllers
         }
 
         [HttpPost]
-        public IActionResult PaymentProceed(Payment payInfo, AllInformation allInfo)
+        public IActionResult PaymentProceed(Payment allInfo)
         {
+            Console.WriteLine(allInfo.BEmail);
 
- 
-            allInfo.FullName = payInfo.FullName;
-            allInfo.CardNumber = payInfo.CardNumber;
-            allInfo.ExpiryMonth = payInfo.ExpiryMonth;
-            allInfo.ExpiryYear = payInfo.ExpiryYear;
-            allInfo.CVVNumber = payInfo.CVCNumber;
-            allInfo.BFullName = payInfo.BFullName;
-            allInfo.BEmail = payInfo.BEmail;
-            allInfo.BAddress = payInfo.BAddress;
-            allInfo.BCity = payInfo.BCity;
-            allInfo.BPostalCode = payInfo.BPostalCode;
+            AllInformation umodel = new AllInformation();
+
+            if (allInfo.CVCNumber != 0 && allInfo.CardNumber != null)
+            {
+                umodel.Haspaid = "Complete";
+                int result = umodel.PaidConfirmation(allInfo.BEmail);
+                if (result > 0)
+                {
+                    Console.WriteLine("Data Saved Successfully #2");
+                }
+                else
+                {
+                    Console.WriteLine(allInfo.BEmail);
+                    Console.WriteLine(umodel.Email);
+                    Console.WriteLine("Data Not Saved Successfully");
+                    umodel.Haspaid = "Not-Paid";
+                }
+            }
 
 
-            Console.WriteLine("!!!>" + allInfo.ChildName);
-
-            ViewBag.Message = allInfo;
-            return View("Complete");
+            //ViewBag.Message = allInfo;
+            //return View("Complete");
+            return View();
         }
 
 
@@ -176,20 +180,18 @@ namespace Capstone1.Controllers
                     Object numChild = rdr["NumOfChildren"];
                     info.NumberOfChildren = numChild.ToString();
 
-                   info.ChildAge = rdr["ChildAge"].ToString()  ;
+                    info.ChildAge = rdr["ChildAge"].ToString();
 
 
                     info.Email = rdr["Email"].ToString();
                     info.Phone = rdr["PhoneNumber"].ToString();
+                    info.Haspaid = rdr["PaymentStatus"].ToString();
                     model.Add(info);
                 }
 
             }
-
             return View(model);
-
-
-            return View("ClassList");
+            //return View("ClassList");
         }
 
 
