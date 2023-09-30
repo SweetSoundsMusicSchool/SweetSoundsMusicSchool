@@ -15,8 +15,40 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Aleks\source\repos\SweetSoundsMusicSchool
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/StripePayment.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHJpcGVQYXltZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassPicker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc1BpY2tlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/PriceInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmljZUluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Privacy.cshtml]
@@ -25,10 +57,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/RegSuccess.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Shared/Error.cshtml]

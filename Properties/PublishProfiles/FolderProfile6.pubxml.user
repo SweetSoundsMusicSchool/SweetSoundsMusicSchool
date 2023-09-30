@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\Aleks\Dropbox\Shared Server-Aleks</_PublishTargetUrl>
-    <History>True|2023-02-06T23:34:32.6993043Z;</History>
+    <History>True|2023-09-30T14:49:01.1952296Z;True|2023-02-06T18:34:32.6993043-05:00;</History>
     <LastFailureDetails />
     <TimeStampOfAssociatedLegacyPublishXmlFile />
   </PropertyGroup>
@@ -13,5 +13,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <DestinationConnectionStrings Include="DBConn">
       <Value>Server=tcp:clientinformation.database.windows.net,1433%3bInitial Catalog=SmapleDatabase%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3bAuthentication=%27Active Directory Default%27%3b</Value>
     </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Capstone1.Data.AppDbContext">
+      <Value>Server=tcp:clientinformation.database.windows.net,1433%3bInitial Catalog=SmapleDatabase%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3bAuthentication=%27Active Directory Default%27%3b</Value>
+    </EFMigrations>
+    <EFMigrations Include="Capstone1.Models.AllInformation">
+      <Value>Server=tcp:clientinformation.database.windows.net,1433%3bInitial Catalog=SmapleDatabase%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3bAuthentication=%27Active Directory Default%27%3b</Value>
+    </EFMigrations>
   </ItemGroup>
 </Project>

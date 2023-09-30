@@ -16,3 +16,65 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4%;
+    font-size: 16px;
+    width: 80%;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+
+
+.register{
+    background-color:forestgreen;
+
+}
+
+
+
+.content {
+    border-radius: 10% / 50%;
+    background-color: #7cdbfc
+}
+
+.link {
+    background-color: ghostwhite;
+    border-radius: 25% 10%;
+    padding: 5%;
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+}
+
+    .link:hover {
+        color:black;
+        background-color:bisque;
+    }
+
+.homeImage {
+    border-radius: 10% / 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.register {
+    background-color:cadetblue;
+    border-radius: 25% 10%;
+    padding: 40%;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    margin:auto;
+    align-content:center;
+}
+
+    .register:hover {
+        color: black;
+        background-color: bisque;
+    }
