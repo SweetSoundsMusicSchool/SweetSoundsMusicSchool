@@ -46,12 +46,15 @@ namespace Capstone1.Models
 
 
 
-        public int SaveDetails()
+        public int SaveDetails(string Lessontype, string Location)
         {
+            Console.WriteLine("Information:" + Lessontype + " " + Location);
+
             SqlConnection con = new SqlConnection(GetConString.ConString());
-            string query = "INSERT INTO ClientInformation(ParentName,ChildName,NumOfChildren,ChildAge,Email,PhoneNumber) " +
+
+            string query = "INSERT INTO ClientInformation(ParentName,ChildName,NumOfChildren,ChildAge,Email,PhoneNumber,ClassType,Location) " +
                 "values ('" + ParentName + "','" + ChildName + "','" + NumberOfChildren + "','" 
-                 + ChildAge + "','"+Email +"','"+Phone+"')";
+                 + ChildAge + "','"+Email +"','"+Phone+"','"+ Lessontype+"','"+ Location +"')";
 
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();

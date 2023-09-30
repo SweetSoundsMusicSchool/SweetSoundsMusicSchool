@@ -21,6 +21,9 @@
                 <th>Child Age</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Lesson </th>
+                <th>Location</th>
+
                 <th>Payment Status</th>
             </tr>
             @foreach (var item in Model)
@@ -32,6 +35,7 @@
                     <td>@item.ChildAge</td>
                     <td>@item.Email</td>
                     <td>@item.Phone</td>
+
                     <td>@item.Haspaid</td>
                 </tr>
             }

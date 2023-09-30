@@ -20,6 +20,9 @@ namespace Capstone1.Controllers
 
         AllInformation allInfo = new AllInformation();
 
+        private string ClassType;
+        private string Location;
+
         public HomeController(AllInformation context , ILogger<HomeController> logger)
         {
             _context = context;
@@ -34,17 +37,26 @@ namespace Capstone1.Controllers
         /*
          * Navigation to the ClassPicker Page, Two drop downs to select class details.
          */
-        public IActionResult ClassPicker(ClassChoosenDetails classDetails)
+       
+        public IActionResult ClassPicker()
         {
-            return View("ClassPicker");
+            var model = new ClassChoosenDetails();
+            return View(model);
+
+            //return View("ClassPicker");
         }
 
         /*
          * Navigation to the registration page with form.
          */
-        public IActionResult Registration()
+        [HttpPost]
+        public IActionResult Registration(ClassChoosenDetails classDetails)
         {
-            return View("Registration");
+            this.ClassType = Request.Form["LessonPicked"].ToString();
+            this.Location = Request.Form["LocationPicked"].ToString();
+
+           Console.WriteLine("Class Pick, Submitted Info:"+ ClassType + " " + Location);
+           return View("Registration");
 
         }
 
@@ -99,7 +111,11 @@ namespace Capstone1.Controllers
                 umodel.Email = formInfo.Email;
                 umodel.Phone = formInfo.Phone;
 
-                int result = umodel.SaveDetails();
+                Console.WriteLine("Class Pick, Submitted Info #2:" + ClassType + " " + Location);
+
+                int result = umodel.SaveDetails(ClassType, Location);
+
+
                 if (result > 0)
                 {
                     Console.WriteLine("Data Saved Successfully");
@@ -126,6 +142,7 @@ namespace Capstone1.Controllers
             {
                 umodel.Haspaid = "Complete";
                 int result = umodel.PaidConfirmation(allInfo.BEmail);
+
                 if (result > 0)
                 {
                     Console.WriteLine("Data Saved Successfully #2");
@@ -133,7 +150,6 @@ namespace Capstone1.Controllers
                 else
                 {
                     Console.WriteLine(allInfo.BEmail);
-                    Console.WriteLine(umodel.Email);
                     Console.WriteLine("Data Not Saved Successfully");
                     umodel.Haspaid = "Not-Paid";
                 }
@@ -142,7 +158,7 @@ namespace Capstone1.Controllers
 
             //ViewBag.Message = allInfo;
             //return View("Complete");
-            return View();
+            return View("Complete");
         }
 
 
