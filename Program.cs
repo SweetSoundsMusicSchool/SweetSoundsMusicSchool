@@ -39,7 +39,7 @@ builder.Services.AddRazorPages();
 
 
 builder.Services.AddDbContext<Capstone1.Models.AllInformation>(options => options.UseSqlite(
-    builder.Configuration.GetConnectionString("Client-Info")
+    builder.Configuration.GetConnectionString("DBConn")
     ));
 
 var app = builder.Build();
