@@ -1,19 +1,42 @@
-﻿@using Capstone1.Models
-@model Capstone1.Models.AllInformation;
-@{
-    ViewBag.Title = "Complete";
-}
+﻿@model List<AllInformation>
 
-@{
-    var data = ViewBag.Message;
-}
 
 <div class="text-center">
 
     <h2>Thank You For Registering With Sweet Sounds Music School</h2>
-    <h3>Please Review Your entered Information</h3>
 
-    <p></p>
+    <div class="">
+        <h2>Please Review Your entered Information</h2>
+        <table>
+            <tr>
+                <th>Parents/Gaurdians Name</th>
+                <th>Child Name</th>
+                <th>Number Of Children</th>
+                <th>Child Age</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+                <th>Lesson </th>
+                <th>Location</th>
+
+                <th>Payment Status</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ParentName</td>
+                    <td>@item.ChildName</td>
+                    <td>@item.NumberOfChildren</td>
+                    <td>@item.ChildAge</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.ClassType</td>
+                    <td>@item.Location</td>
+
+                    <td>@item.Haspaid</td>
+                </tr>
+            }
+
+        </table>
 
    
     

@@ -4,6 +4,8 @@
     {
         public string Location { get; set; } = string.Empty;
 
+        public string LessonType { get; set; } = string.Empty;
+
         public string ParentName { get; set; } = string.Empty;
 
         public string ParentAttendence { get; set; } = string.Empty;

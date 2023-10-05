@@ -44,17 +44,21 @@ namespace Capstone1.Models
 
         public string Haspaid { get; set; }
 
+        public string Location { get; set; } = string.Empty;
+
+        public string ClassType { get; set; } = string.Empty;
 
 
-        public int SaveDetails(string Lessontype, string Location)
+
+        public int SaveDetails()
         {
-            Console.WriteLine("Information:" + Lessontype + " " + Location);
+            Console.WriteLine("Information :" + ClassType + " " + Location);
 
             SqlConnection con = new SqlConnection(GetConString.ConString());
 
             string query = "INSERT INTO ClientInformation(ParentName,ChildName,NumOfChildren,ChildAge,Email,PhoneNumber,ClassType,Location) " +
-                "values ('" + ParentName + "','" + ChildName + "','" + NumberOfChildren + "','" 
-                 + ChildAge + "','"+Email +"','"+Phone+"','"+ Lessontype+"','"+ Location +"')";
+                "VALUES('" + ParentName + "','" + ChildName + "','" + NumberOfChildren + "','" 
+                + ChildAge + "','" + Email + "','" + Phone + "','" + ClassType + "','" + Location + "')";
 
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -66,7 +70,7 @@ namespace Capstone1.Models
         public int PaidConfirmation(string email)
         {
             SqlConnection con = new SqlConnection(GetConString.ConString());
-            string query = "INSERT INTO ClientInformation (PaymentStatus) VALUES ('" + Haspaid + "') WHERE Email = '"+email+"'";
+            string query = "INSERT INTO ClientInformation (PaymentStatus) VALUES ('PAID') ";
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             int i = cmd.ExecuteNonQuery();

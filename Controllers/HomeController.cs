@@ -8,6 +8,7 @@ using System.Drawing;
 using System;
 using System.Data;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Capstone1.Controllers
 {
@@ -20,8 +21,8 @@ namespace Capstone1.Controllers
 
         AllInformation allInfo = new AllInformation();
 
-        private string ClassType;
-        private string Location;
+         string ClassType;
+         string Location;
 
         public HomeController(AllInformation context , ILogger<HomeController> logger)
         {
@@ -52,11 +53,17 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult Registration(ClassChoosenDetails classDetails)
         {
-            this.ClassType = Request.Form["LessonPicked"].ToString();
-            this.Location = Request.Form["LocationPicked"].ToString();
+            ClassType = Request.Form["LessonPicked"].ToString();
+            Location = Request.Form["LocationPicked"].ToString();
 
-           Console.WriteLine("Class Pick, Submitted Info:"+ ClassType + " " + Location);
-           return View("Registration");
+
+           Console.WriteLine("Class Pick, Submitted Info:"+ ClassType + " ," + Location);
+
+            RegisterForm model = new RegisterForm();
+            model.Location = Location;
+            model.LessonType = ClassType;
+
+            return View("Registration",model);
 
         }
 
@@ -102,7 +109,6 @@ namespace Capstone1.Controllers
             else
             {             
 
-
                 AllInformation umodel = new AllInformation();
                 umodel.ParentName = formInfo.ParentName;
                 umodel.ChildName = formInfo.ChildName;
@@ -110,10 +116,18 @@ namespace Capstone1.Controllers
                 umodel.NumberOfChildren = formInfo.NumberOfChildren;
                 umodel.Email = formInfo.Email;
                 umodel.Phone = formInfo.Phone;
+                umodel.ClassType = formInfo.LessonType;
+                umodel.Location = formInfo.Location;
 
-                Console.WriteLine("Class Pick, Submitted Info #2:" + ClassType + " " + Location);
+                if (formInfo.Location.IsNullOrEmpty())
+                {
+                    Console.WriteLine("Its Empty !!");
+                }
 
-                int result = umodel.SaveDetails(ClassType, Location);
+                Console.WriteLine("Class Pick, Submitted Info #2:" + formInfo.LessonType + " " + formInfo.Location);
+
+                int result = umodel.SaveDetails();
+               
 
 
                 if (result > 0)
@@ -155,10 +169,46 @@ namespace Capstone1.Controllers
                 }
             }
 
+            //database query to get the latest entry to show the users entered information
+            SqlConnection conn = new SqlConnection(GetConString.ConString());
+            String sql = "SELECT TOP 1 * FROM ClientInformation ORDER BY ClientID DESC";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            var results = new List<AllInformation>();
+            using (conn)
+            {
+                conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var info = new AllInformation();
+                    info.ParentName = rdr["ParentName"].ToString();
+                    info.ChildName = rdr["ChildName"].ToString();
+
+                    object numChild = rdr["NumOfChildren"];
+                    info.NumberOfChildren = numChild.ToString();
+
+                    info.ChildAge = rdr["ChildAge"].ToString();
+
+
+                    info.Email = rdr["Email"].ToString();
+                    info.Phone = rdr["PhoneNumber"].ToString();
+
+                    info.ClassType = rdr["ClassType"].ToString();
+                    info.Location = rdr["Location"].ToString();
+
+                    info.Haspaid = rdr["PaymentStatus"].ToString();
+                    results.Add(info);
+
+                }
+                //conn.Close();
+
+            }
+
 
             //ViewBag.Message = allInfo;
             //return View("Complete");
-            return View("Complete");
+            return View("Complete" ,results);
         }
 
 
@@ -201,6 +251,10 @@ namespace Capstone1.Controllers
 
                     info.Email = rdr["Email"].ToString();
                     info.Phone = rdr["PhoneNumber"].ToString();
+
+                    info.ClassType = rdr["ClassType"].ToString();
+                    info.Location = rdr["Location"].ToString();
+
                     info.Haspaid = rdr["PaymentStatus"].ToString();
                     model.Add(info);
                 }

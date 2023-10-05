@@ -64,6 +64,14 @@
 
 
 
+		<span>
+			<label asp-for="Location">Location / Class Choosen: </label>
+			<input asp-for="Location" type="text" name="Location" value="@Model.Location.ToString()" disabled>
+			<input asp-for="LessonType" type="text" name="class" value="@Model.LessonType.ToString()" disabled>
+
+		</span>
+
+
 		<nav class="buttons">
 
 
@@ -71,6 +79,7 @@
 			<button type="submit" class="submit">Register</button>
 
 		</nav>
+
 
 
 
