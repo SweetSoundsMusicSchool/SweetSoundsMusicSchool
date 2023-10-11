@@ -69,7 +69,7 @@ namespace Capstone1.Controllers
 
             
            // ModelState.AddModelError("", "Invalid username or password");
-            return View( model);
+            return View();
         }
     }
 }
