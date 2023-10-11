@@ -224,44 +224,12 @@ namespace Capstone1.Controllers
             return View("StripePayment");
         }
 
-        //Admin view for Jenny's class list
-        public IActionResult ClassList()
+        
+
+        //login controller method
+        public IActionResult AdminLogIn()
         {
-            SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String connectionString = GetConString.ConString();
-            String sql = "SELECT * FROM ClientInformation";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            var model = new List<AllInformation>();
-            using (conn)
-            {
-                conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    var info = new AllInformation();
-                    info.ParentName = rdr["ParentName"].ToString();
-                    info.ChildName = rdr["ChildName"].ToString();
-
-                    Object numChild = rdr["NumOfChildren"];
-                    info.NumberOfChildren = numChild.ToString();
-
-                    info.ChildAge = rdr["ChildAge"].ToString();
-
-
-                    info.Email = rdr["Email"].ToString();
-                    info.Phone = rdr["PhoneNumber"].ToString();
-
-                    info.ClassType = rdr["ClassType"].ToString();
-                    info.Location = rdr["Location"].ToString();
-
-                    info.Haspaid = rdr["PaymentStatus"].ToString();
-                    model.Add(info);
-                }
-
-            }
-            return View(model);
-            //return View("ClassList");
+            return View("AdminLogin");
         }
 
 
