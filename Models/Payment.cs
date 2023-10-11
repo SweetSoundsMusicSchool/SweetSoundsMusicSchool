@@ -26,6 +26,7 @@ namespace Capstone1.Models
         public string BCity { get; set; } = string.Empty;
         public string BPostalCode { get; set; } = string.Empty;
 
+        //Hello
         
 
     }
