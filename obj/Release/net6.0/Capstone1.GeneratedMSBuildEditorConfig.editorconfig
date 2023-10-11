@@ -5,76 +5,81 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Capstone1
 build_property.RootNamespace = Capstone1
-build_property.ProjectDir = C:\Users\Aleks\source\repos\SweetSoundsMusicSchool\
+build_property.ProjectDir = C:\Users\Osama\Source\Repos\SweetSoundsMusicSchools\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Aleks\source\repos\SweetSoundsMusicSchool
+build_property.MSBuildProjectDirectory = C:\Users\Osama\Source\Repos\SweetSoundsMusicSchools
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/StripePayment.razor]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/StripePayment.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHJpcGVQYXltZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/about.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/about.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassDetails.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/AdminLogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbkxvZ0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/ClassDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassList.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/ClassList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/ClassPicker.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/ClassPicker.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGFzc1BpY2tlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Complete.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/Complete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Index.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Payment.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/PriceInfo.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/PriceInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmljZUluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Privacy.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Home/Registration.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Home/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Shared/Error.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/_ViewImports.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/_ViewStart.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aleks/source/repos/SweetSoundsMusicSchool/Views/Shared/_Layout.cshtml]
+[C:/Users/Osama/Source/Repos/SweetSoundsMusicSchools/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-612w6m3r85

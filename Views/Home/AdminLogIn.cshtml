@@ -1,0 +1,24 @@
+﻿@model Capstone1.Models.Admin
+
+<h1>Admin Log In</h1>
+
+<div class="FormDiv">
+    <p>Sweet Sounds Music School</p>
+
+    <form method="post" asp-action="AdminLogIn" asp-controller="Account">
+
+        <div>
+            <label asp-for="Username"></label>
+            <input type="text" asp-for="Username" class="form-control" />
+        </div>
+
+        <div>
+            <label asp-for="Password"></label>
+            <input type=text asp-for="Password" class="form-control" />
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+    </form>
+</div>
