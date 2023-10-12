@@ -64,12 +64,12 @@ namespace Capstone1.Controllers
                 }
                 return View("../Home/ClassList", infoModel);
 
-                //return View("ClassList");
             }
 
-            
-           // ModelState.AddModelError("", "Invalid username or password");
-            return View();
+            return View("../Home/AdminLogIn");
         }
+
+
+
     }
 }
