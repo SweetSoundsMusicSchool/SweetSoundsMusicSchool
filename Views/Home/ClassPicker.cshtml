@@ -3,6 +3,9 @@
 <h1>Please Choose One Of The Given Classes</h1>
 
 
+
+
+
 <div class="FormDiv">
 
     <p>Please pick the age group and the location you wish to attend</p>
@@ -10,17 +13,19 @@
     <form method="Post" asp-action="Registration">
 
 
-    <span>
-        <select asp-for="Lesson"
-                    asp-items="Model.Lessons" value="Model.Lessons" name="LessonPicked">
-            </select>
-    </span>
 
-    <span>
-            <select asp-for="Location"
-                    asp-items="Model.Locations" value="Model.Locations" name="LocationPicked">
-            </select>
-    </span>
+		<div class="ClassTableCenter">
+			@foreach (var item in Model.All.ToList())
+			{
+				<hr />
+				<input asp-for="Lesson" value="@item.Value" type="radio" id="lessons" class="custom-radio">
+				<label asp-for="Lesson">@item.Text</label>
+				
+				<hr />
+			}
+			
+		</div>
+        
 
         <nav class="buttons">
 
@@ -30,4 +35,8 @@
         </nav>
      
 </form>
+
+
+ 
+
 </div>

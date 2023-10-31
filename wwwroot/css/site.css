@@ -14,21 +14,38 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-}
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 4%;
-    font-size: 16px;
-    width: 80%;
+    margin-bottom: 60px;
+   
 }
 
 table, th, td {
-    border: 1px solid;
+    border: 1px solid black;
 }
 
+.ClassInfo {
+    width: 100%
+}
+.ClassTableCenter {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+}
+
+
+th, td {
+    border: 2px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: cadetblue;
+    color: white;
+}
 
 
 .register{
@@ -77,4 +94,25 @@ table, th, td {
     .register:hover {
         color: black;
         background-color: bisque;
+    }
+
+
+.classPickerRadio {
+    white-space: pre-line;
+}
+
+
+.custom-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    cursor: pointer;
+}
+
+    .custom-radio:checked {
+        background-color: #3498db;
     }
