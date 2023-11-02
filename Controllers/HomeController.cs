@@ -6,8 +6,6 @@ using System.Data.SqlClient;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Drawing;
 using System;
-using System.Data;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Capstone1.Controllers
@@ -50,20 +48,20 @@ namespace Capstone1.Controllers
         /*
          * Navigation to the registration page with form.
          */
-        [HttpPost]
-        public IActionResult Registration(ClassChoosenDetails classDetails)
+        [HttpGet]
+        public IActionResult Registration(string  Lesson)
         {
-            ClassType = Request.Form["LessonPicked"].ToString();
-            Location = Request.Form["LocationPicked"].ToString();
+         
 
 
-           Console.WriteLine("Class Pick, Submitted Info:"+ ClassType + " ," + Location);
+           Console.WriteLine("Class Pick, Submitted Info:"+ Lesson);
 
             RegisterForm model = new RegisterForm();
-            model.Location = Location;
-            model.LessonType = ClassType;
+            model.Location = Lesson;
+            Location = Lesson;
+            //model.LessonType = ClassType;
 
-            return View("Registration",model);
+            return View("Registration", model);
 
         }
 
@@ -102,13 +100,53 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
-            if (formInfo == null)
+            ClassChecking check = new ClassChecking();
+            // if all classes are complety full
+            if (check.TotalAttendies() >= 24 )
             {
-                return View("Registration");
+                TempData["AlertMessage"] = "Unfortunately all the classes are full. Please contact for next avalible sessions";
+                return View("Index");
+
+            }
+            // method calls to do the 6 checks for each class and if its full or not.
+            //#1
+            else if ( check.GeogrgetownZeroToFourYears() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session.";
+                return View("Index");
+            }
+            //#2
+            else if (check.GeogrgetownZeroToEighteenMonths() >= 8 )
+            {
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 18 Months is full. Please contact for next avalible session.";
+                return View("Index");
+            }
+            //#3
+            else if (check.OakvilleZeroToFourYears() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Oakvill ages 0 to 4 Years is full. Please contact for next avalible session.";
+                return View("Index");
+            }
+            //#4
+            else if (check.OakvilleZeroToEighteenMonths() >= 8 )
+            {
+                TempData["AlertMessage"] = "Unfortunately Oakville ages 0 to 18 Months is full. Please contact for next avalible session.";
+                return View("Index");
+            }
+            //#5
+            else if (check.MiltonZeroToFourYears() >= 8 )
+            {
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 years is full. Please contact for next avalible session.";
+                return View("Index");
+            }
+            //#6
+            else if (check.MiltonZeroToEighteenMonths() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 Years is full. Please contact for next avalible session.";
+                return View("Index");
             }
             else
-            {             
-
+            {
                 AllInformation umodel = new AllInformation();
                 umodel.ParentName = formInfo.ParentName;
                 umodel.ChildName = formInfo.ChildName;
@@ -116,27 +154,45 @@ namespace Capstone1.Controllers
                 umodel.NumberOfChildren = formInfo.NumberOfChildren;
                 umodel.Email = formInfo.Email;
                 umodel.Phone = formInfo.Phone;
-                umodel.ClassType = formInfo.LessonType;
+                //umodel.ClassType = formInfo.LessonType;
                 umodel.Location = formInfo.Location;
+
+                Console.WriteLine("->" + Location);
 
                 if (formInfo.Location.IsNullOrEmpty())
                 {
                     Console.WriteLine("Its Empty !!");
                 }
 
-                Console.WriteLine("Class Pick, Submitted Info #2:" + formInfo.LessonType + " " + formInfo.Location);
+                Console.WriteLine("Class Pick, Submitted Info #2:" + formInfo.Location);
 
-                int result = umodel.SaveDetails();
-               
-
-
-                if (result > 0)
+                if(check.TheCheckIfRegistered(formInfo.Email) == true)
                 {
-                    Console.WriteLine("Data Saved Successfully");
+                    //true if eamil exisits in the database
+                    //alert and prompt to try again
+                    TempData["AlertMessage"] = "Looks Like a client with this email: " +formInfo.Email+ " Has  registered before, Please try again. ";
+                    //return register page to try again
+                    RegisterForm model = new RegisterForm();
+                    model.Location = formInfo.Location;
+                    return View("Registration", model);
+                }
+                else
+                {
+                    //else, false, save the data
+                    int result = umodel.SaveDetails();
+                    if (result > 0)
+                    {
+                        Console.WriteLine("Data Saved Successfully");
+                    }
                 }
 
-                return View("Payment"); 
-            } 
+                
+            }
+            
+
+
+
+            return View("Payment");
 
         }
 
@@ -148,7 +204,6 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult PaymentProceed(Payment allInfo)
         {
-            Console.WriteLine(allInfo.BEmail);
 
             AllInformation umodel = new AllInformation();
 
@@ -163,7 +218,6 @@ namespace Capstone1.Controllers
                 }
                 else
                 {
-                    Console.WriteLine(allInfo.BEmail);
                     Console.WriteLine("Data Not Saved Successfully");
                     umodel.Haspaid = "Not-Paid";
                 }
@@ -204,9 +258,6 @@ namespace Capstone1.Controllers
                 //conn.Close();
 
             }
-
-
-            //ViewBag.Message = allInfo;
             //return View("Complete");
             return View("Complete" ,results);
         }

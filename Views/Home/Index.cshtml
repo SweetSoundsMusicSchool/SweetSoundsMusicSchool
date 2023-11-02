@@ -5,6 +5,13 @@
     ViewData["Title"] = "Sweet Sounds Music School ";
 }
 
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessage"]');
+    </script>
+}
+
 <div class="text-center">
 
     <h1 class="display-4">Sweet Sounds Music School</h1>

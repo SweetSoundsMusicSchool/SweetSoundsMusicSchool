@@ -2,6 +2,12 @@
 @model Capstone1.Models.RegisterForm
 
 
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessage"]');
+    </script>
+}
 
 <h1>Registration Page</h1>
 
@@ -66,9 +72,7 @@
 
 		<span>
 			<label asp-for="Location">Location / Class Choosen: </label>
-			<input asp-for="Location" type="text" name="Location" value="@Model.Location.ToString()" disabled>
-			<input asp-for="LessonType" type="text" name="class" value="@Model.LessonType.ToString()" disabled>
-
+			<input asp-for="Location" type="text" name="Location" value="@Model.Location.ToString()" readonly>
 		</span>
 
 
