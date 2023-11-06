@@ -18,14 +18,8 @@
 			@foreach (var item in Model.All.ToList())
 			{
 				<hr />
-					<label asp-for="Lesson" class="custom-radio" > @item.Text
-
-						<input asp-for="Lesson" value="@item.Value" 
-								id="lessons" type="radio" name="radio">
-
-		
-
-					</label>
+				<input asp-for="Lesson" value="@item.Value" id="lessons" type="radio" class="custom-radio" />
+				<label asp-for="Lesson" class="customRadio">@item.Text</label>
 
 				<hr />
 			}

@@ -49,7 +49,7 @@ namespace Capstone1.Controllers
          * Navigation to the registration page with form.
          */
         [HttpGet]
-        public IActionResult Registration(string  Lesson)
+        public IActionResult Registration(string Lesson)
         {
          
 
