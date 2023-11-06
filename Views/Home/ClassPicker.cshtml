@@ -18,14 +18,16 @@
 			@foreach (var item in Model.All.ToList())
 			{
 				<hr />
-				<input asp-for="Lesson" value="@item.Value" id="lessons" type="radio" class="custom-radio" />
-				<label asp-for="Lesson" class="customRadio">@item.Text</label>
+				<input type="radio" id="@item.Value" name="Lesson" value="@item.Value" class="custom-radio">
+
+				<label for="@item.Value" class="customRadio">@item.Text</label>
 
 				<hr />
 			}
+		
 			
 		</div>
-        
+
 
         <nav class="buttons">
             <a asp-action="Index" class="Cancel">Cancel</a>
