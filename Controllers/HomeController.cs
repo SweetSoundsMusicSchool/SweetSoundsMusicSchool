@@ -100,6 +100,9 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
+
+           // string[] dynamicInputValues = Request.Form.TryGetValue("nameFields");
+
             ClassChecking check = new ClassChecking();
             // if all classes are complety full
             if (check.TotalAttendies() >= 24 )
