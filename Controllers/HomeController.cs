@@ -52,16 +52,62 @@ namespace Capstone1.Controllers
         public IActionResult Registration(string Lesson)
         {
          
-
-
            Console.WriteLine("Class Pick, Submitted Info:"+ Lesson);
 
-            RegisterForm model = new RegisterForm();
-            model.Location = Lesson;
-            Location = Lesson;
-            //model.LessonType = ClassType;
+            ClassChecking check = new ClassChecking();
 
-            return View("Registration", model);
+            // if all classes are complety full
+            if (check.TotalAttendies() >= 24)
+            {
+                TempData["AlertMessage"] = "Unfortunately all the classes are full. Please contact for next avalible sessions";
+
+                return RedirectToAction("Index");
+
+            }
+            // method calls to do the 6 checks for each class and if its full or not.
+            //#1
+            else if (check.GeogrgetownZeroToFourYears() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            //#2
+            else if (check.GeogrgetownZeroToEighteenMonths() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 18 Months is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            //#3
+            else if (check.OakvilleZeroToFourYears() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Oakvill ages 0 to 4 Years is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            //#4
+            else if (check.OakvilleZeroToEighteenMonths() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Oakville ages 0 to 18 Months is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            //#5
+            else if (check.MiltonZeroToFourYears() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 years is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            //#6
+            else if (check.MiltonZeroToEighteenMonths() >= 8)
+            {
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 Years is full. Please contact for next avalible session.";
+                return RedirectToAction("ClassPicker");
+            }
+            else
+            {
+                RegisterForm model = new RegisterForm();
+                model.Location = Lesson;
+                Location = Lesson;
+                return View("Registration", model);
+            }
 
         }
 
@@ -91,8 +137,6 @@ namespace Capstone1.Controllers
 
   
 
-
-
         /*
          * Navigation to Payment Page, handles Payment Information 
          */
@@ -100,57 +144,9 @@ namespace Capstone1.Controllers
         [HttpPost]
         public IActionResult RegSuccess(RegisterForm formInfo)
         {
-
-           // string[] dynamicInputValues = Request.Form.TryGetValue("nameFields");
-
             ClassChecking check = new ClassChecking();
-            // if all classes are complety full
-            if (check.TotalAttendies() >= 24 )
-            {
-                TempData["AlertMessage"] = "Unfortunately all the classes are full. Please contact for next avalible sessions";
-                return View("Index");
 
-            }
-            // method calls to do the 6 checks for each class and if its full or not.
-            //#1
-            else if ( check.GeogrgetownZeroToFourYears() >= 8)
-            {
-                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            //#2
-            else if (check.GeogrgetownZeroToEighteenMonths() >= 8 )
-            {
-                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 18 Months is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            //#3
-            else if (check.OakvilleZeroToFourYears() >= 8)
-            {
-                TempData["AlertMessage"] = "Unfortunately Oakvill ages 0 to 4 Years is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            //#4
-            else if (check.OakvilleZeroToEighteenMonths() >= 8 )
-            {
-                TempData["AlertMessage"] = "Unfortunately Oakville ages 0 to 18 Months is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            //#5
-            else if (check.MiltonZeroToFourYears() >= 8 )
-            {
-                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 years is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            //#6
-            else if (check.MiltonZeroToEighteenMonths() >= 8)
-            {
-                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 Years is full. Please contact for next avalible session.";
-                return View("Index");
-            }
-            else
-            {
-                AllInformation umodel = new AllInformation();
+            AllInformation umodel = new AllInformation();
                 umodel.ParentName = formInfo.ParentName;
                 umodel.ChildName = formInfo.ChildName;
                 umodel.ChildAge = formInfo.ChildAge;
@@ -189,11 +185,7 @@ namespace Capstone1.Controllers
                     }
                 }
 
-                
-            }
-            
-
-
+              
 
             return View("Payment");
 

@@ -1,5 +1,13 @@
 ﻿@model Capstone1.Models.ClassChoosenDetails;
 
+
+@if (TempData["AlertMessage"] != null)
+{
+    <script>
+        alert('@TempData["AlertMessage"]');
+    </script>
+}
+
 <h1>Please Choose One Of The Given Classes</h1>
 
 
@@ -12,8 +20,6 @@
 
     <form method="Get" asp-action="Registration">
 
-
-
 		<div class="ClassTableCenter">
 			@foreach (var item in Model.All.ToList())
 			{
@@ -24,17 +30,14 @@
 
 				<hr />
 			}
-		
-			
 		</div>
-
 
         <nav class="buttons">
             <a asp-action="Index" class="Cancel">Cancel</a>
             <button type="submit" class="submit">Register</button>
         </nav>
      
-</form>
+	</form>
 
 
 

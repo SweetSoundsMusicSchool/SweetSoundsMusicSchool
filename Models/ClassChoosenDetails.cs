@@ -8,10 +8,6 @@ namespace Capstone1.Models
 
         public string Lesson { get; set; } = String.Empty;
 
-        //public string ClassDate { get; set; } = String.Empty;
-
-
-
         public List<SelectListItem> All { get; } = new List<SelectListItem>
         {
             new SelectListItem {

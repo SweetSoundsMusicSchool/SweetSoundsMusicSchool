@@ -37,7 +37,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows for Total Clients: {numRows}");
                 conn.Close();
 
             }
@@ -57,7 +57,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows for if registard: {numRows}");
                  if (numRows > 1)
                 {
                     return true;
@@ -82,7 +82,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Goergetown 0-18 Years: {numRows}");
                 conn.Close();
 
             }
@@ -101,7 +101,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Goergetown 0-18 Months:: {numRows}");
                 conn.Close();
 
             }
@@ -119,7 +119,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Oakville 0-4 Years:: {numRows}");
                 conn.Close();
 
             }
@@ -138,7 +138,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Oakville 0-18 Months: {numRows}");
                 conn.Close();
 
             }
@@ -157,7 +157,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Milton 0-4 Years:: {numRows}");
 
                 conn.Close();
             }
@@ -176,7 +176,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows: {numRows}");
+                Console.WriteLine($"Number of rows Goergetown 0-18 Months:: {numRows}");
 
                 conn.Close();
             }
