@@ -66,7 +66,7 @@ namespace Capstone1.Controllers
             }
             // method calls to do the 6 checks for each class and if its full or not.
             //#1
-            else if (check.GeogrgetownZeroToFourYears() >= 2)
+            else if (check.GeogrgetownZeroToFourYears() >= 8)
             {
                 TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session, or select a diffrent class. ";
                 return RedirectToAction("ClassPicker");
