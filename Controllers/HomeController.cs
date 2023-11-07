@@ -66,39 +66,39 @@ namespace Capstone1.Controllers
             }
             // method calls to do the 6 checks for each class and if its full or not.
             //#1
-            else if (check.GeogrgetownZeroToFourYears() >= 8)
+            else if (check.GeogrgetownZeroToFourYears() >= 2)
             {
-                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 4 years is full. Please contact for next avalible session, or select a diffrent class. ";
                 return RedirectToAction("ClassPicker");
             }
             //#2
             else if (check.GeogrgetownZeroToEighteenMonths() >= 8)
             {
-                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 18 Months is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Geogretown ages 0 to 18 Months is full. Please contact for next avalible session, or select a diffrent class";
                 return RedirectToAction("ClassPicker");
             }
             //#3
             else if (check.OakvilleZeroToFourYears() >= 8)
             {
-                TempData["AlertMessage"] = "Unfortunately Oakvill ages 0 to 4 Years is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Oakvill ages 0 to 4 Years is full. Please contact for next avalible session, or select a diffrent class";
                 return RedirectToAction("ClassPicker");
             }
             //#4
             else if (check.OakvilleZeroToEighteenMonths() >= 8)
             {
-                TempData["AlertMessage"] = "Unfortunately Oakville ages 0 to 18 Months is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Oakville ages 0 to 18 Months is full. Please contact for next avalible session, or select a diffrent class";
                 return RedirectToAction("ClassPicker");
             }
             //#5
             else if (check.MiltonZeroToFourYears() >= 8)
             {
-                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 years is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 years is full. Please contact for next avalible session, or select a diffrent class";
                 return RedirectToAction("ClassPicker");
             }
             //#6
             else if (check.MiltonZeroToEighteenMonths() >= 8)
             {
-                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 Years is full. Please contact for next avalible session.";
+                TempData["AlertMessage"] = "Unfortunately Milton ages 0 to 4 Years is full. Please contact for next avalible session, or select a diffrent class";
                 return RedirectToAction("ClassPicker");
             }
             else

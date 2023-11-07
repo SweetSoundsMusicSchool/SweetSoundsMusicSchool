@@ -17,6 +17,9 @@ function checkout(pubKey, sessionId) {
     stripe.redirectToCheckout({ sessionId });
 }
 
+
+
+//function that checks the Number of childs input feild for more than 1 child
 function MoreChildren() {
 
     var childInput = document.getElementById('childInput');
@@ -34,6 +37,7 @@ function MoreChildren() {
         Message.textContent = "Add the child First Name's in the feild below. ";
     }
 }
+
 
 function CheckForMoreThanOneName() {
     var textInput = document.getElementById('ChildNames');

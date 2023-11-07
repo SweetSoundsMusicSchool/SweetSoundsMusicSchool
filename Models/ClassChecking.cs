@@ -73,7 +73,7 @@ namespace Capstone1.Models
         public int GeogrgetownZeroToFourYears()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Geogrgetown, Children 0 to 4 Years' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Geogrgetown, Children 0 to 4 Years. Tuesdays @ 10:30 AM';";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -92,7 +92,7 @@ namespace Capstone1.Models
         public int GeogrgetownZeroToEighteenMonths()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Geogrgetown, Children 0 to 18 Months' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Geogrgetown, Children 0 to 18 Months. Tuesdays @ 11:45 AM' ;";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -110,7 +110,7 @@ namespace Capstone1.Models
         public int OakvilleZeroToFourYears()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Oakville, Children 0 to 4 Years' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Oakville, Children 0 to 4 Years. Wednesdays @ 10:30 AM' ;";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -129,7 +129,7 @@ namespace Capstone1.Models
         public int OakvilleZeroToEighteenMonths()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Oakville, Children 0 to 18 Months' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Oakville, Children 0 to 18 Months. Wednesdays @ 11:45 AM' ;";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -148,7 +148,7 @@ namespace Capstone1.Models
         public int MiltonZeroToFourYears()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Milton, Children 0 to 4 Years' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Milton, Children 0 to 4 Years. Thursdays @ 10:45 AM' ;";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -157,7 +157,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows Milton 0-4 Years:: {numRows}");
+                Console.WriteLine($"Number of rows Milton 0-4 Years: {numRows}");
 
                 conn.Close();
             }
@@ -167,7 +167,7 @@ namespace Capstone1.Models
         public int MiltonZeroToEighteenMonths()
         {
             SqlConnection conn = new SqlConnection(GetConString.ConString());
-            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Milton, Children 0 to 18 Months' ;";   //counting the number of rows
+            String sql = "SELECT COUNT(*) FROM ClientInformation WHERE Location = 'Milton, Children 0 to 18 Months. Thursdays @ 11:45 AM' ;";   //counting the number of rows
             SqlCommand cmd = new SqlCommand(sql, conn);
             int numRows;
 
@@ -176,7 +176,7 @@ namespace Capstone1.Models
                 conn.Open();
                 numRows = (int)cmd.ExecuteScalar();
 
-                Console.WriteLine($"Number of rows Goergetown 0-18 Months:: {numRows}");
+                Console.WriteLine($"Number of rows Milton 0-18 Months:: {numRows}");
 
                 conn.Close();
             }
