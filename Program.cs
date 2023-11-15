@@ -57,6 +57,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }*/
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+var url = $"http://0.0.0.0:{port}";
+var target = Environment.GetEnvironmentVariable("TARGET") ?? "World";
+app.MapGet("/", () => $"Hello {target}!");
 
 
 app.UseHttpsRedirection();
@@ -75,4 +79,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Run();
+app.Run(url);
