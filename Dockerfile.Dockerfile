@@ -10,4 +10,4 @@ COPY --from=build-env /app/out .
 
 ENV ASPNETCORE_ENVIRONMENT Production
 
-ENTRYPOINT ["dotnet", "Capstone1.dll"]
+ENTRYPOINT ["dotnet", "./Capstone1.dll"]
