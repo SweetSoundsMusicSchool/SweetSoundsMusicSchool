@@ -14,5 +14,133 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+   
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.ClassInfo {
+    width: 100%
+}
+.ClassTableCenter {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+}
+
+
+th, td {
+    border: 2px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: cadetblue;
+    color: white;
+}
+
+
+.register{
+    background-color:forestgreen;
+
+}
+
+
+
+.content {
+    border-radius: 10% / 50%;
+    background-color: #7cdbfc
+}
+
+.link {
+    background-color: ghostwhite;
+    border-radius: 25% 10%;
+    padding: 5%;
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+}
+
+    .link:hover {
+        color:black;
+        background-color:bisque;
+    }
+
+.homeImage {
+    border-radius: 10% / 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.register {
+    background-color:cadetblue;
+    border-radius: 25% 10%;
+    padding: 40%;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    margin:auto;
+    align-content:center;
+}
+
+    .register:hover {
+        color: black;
+        background-color: bisque;
+    }
+
+
+
+
+
+#PrintButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    margin-left: auto;
+    border: thin solid black;
+    background-color: #F0E68C;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+}
+
+    #PrintButton:hover {
+        color: black;
+        background-color: #87CEFA;
+    }
+
+
+/*---------Radio Button----------*/
+.classPickerRadio {
+    white-space: pre-line;
+}
+
+
+.custom-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    cursor: pointer;
+}
+
+    .custom-radio:checked {
+        background-color: #3498db;
+    }
+
+ 
+
+		
